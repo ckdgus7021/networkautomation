@@ -48,7 +48,7 @@ now = dt.datetime.now()
 if __name__ == '__main__':
     accouts= get_accounts()
     
-    file = open('report_' + now.strftime("%Y-%m-%d %H:%M:%S") + '.txt', "w")
+    file = open('report_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
     for account in accouts:        
         print("계정 : ", account)
         file.write("계정 : {0}".format(account))
