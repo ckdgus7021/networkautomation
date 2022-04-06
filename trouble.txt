@@ -1,0 +1,3 @@
+[yum]
+yum install -> trying other mirror:
+yum clean all
