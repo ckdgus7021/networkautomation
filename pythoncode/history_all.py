@@ -5,6 +5,7 @@
 
 from user_list import *
 from datetime import datetime
+import datetime as dt
 
 def remove_num(string):
     tmp = string.strip()
@@ -42,10 +43,12 @@ def history(account):
         history_list.append((date, cmd))
     return history_list
 
+now = dt.datetime.now()
+
 if __name__ == '__main__':
     accouts= get_accounts()
     
-    file = open('report.txt', "w")
+    file = open('report_' + now.strftime("%Y-%m-%d %H:%M:%S") + '.txt', "w")
     for account in accouts:        
         print("계정 : ", account)
         file.write("계정 : {0}".format(account))
