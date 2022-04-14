@@ -17,16 +17,17 @@ def history_by_date(history_list, start_date, end_date) :
 
 
 if __name__ == "__main__" :
-    print "어느 시간에 실행한 명령어를 조회하시겠습니까?"
-    input_date = raw_input("년-월-일 시각을 입력하세요(예. 2016-08-11 14) :")
+    print ("어느 시간에 실행한 명령어를 조회하시겠습니까?")
+    input_date = input("년-월-일 시각을 입력하세요(예. 2016-08-11 14) :")
     input_date = input_date + ":00:00"
 
     date = get_datetime(input_date)
     start_date = date - datetime.timedelta(hours=1)
     end_date = date + datetime.timedelta(hours=1)
-
-    print start_date, "~", end_date, "동안 입력된 명령어"
-    print "-" * 70
+    
+    file = open('report_time_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
+    print (start_date, "~", end_date, "동안 입력된 명령어")
+    print ("-" * 70)
 
     accounts = get_accounts()
     for account in accounts :
@@ -38,7 +39,7 @@ if __name__ == "__main__" :
         if len(history_list) == 0 :
             continue
 
-        print "계정 :", account
+        print ("계정 :", account)
         for h in history_list :
-            print "\t%s\t%s" %h
-        print "-" * 70
+            print ("\t%s\t%s" %h)
+        print ("-" * 70)
