@@ -29,8 +29,8 @@ if __name__ == "__main__" :
     file = open('report_time_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
     print (start_date, "~", end_date, "동안 입력된 명령어")
     print ("-" * 70)
-    print (start_date), "~", end_date, "동안 입력된 명령어"
-    print ("-") * 70
+    print (start_date, "~", end_date, "동안 입력된 명령어")
+    print ("-" * 70)
 
     accounts = get_accounts()
     for account in accounts :
@@ -49,4 +49,4 @@ if __name__ == "__main__" :
         print ("계정 :"), account
         for h in history_list :
             print ("\t%s\t%s") %h
-        print ("-") * 70
+        print ("-" * 70)
