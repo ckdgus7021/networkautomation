@@ -24,7 +24,11 @@ if __name__ == "__main__" :
     date = get_datetime(input_date)
     start_date = date - datetime.timedelta(hours=1)
     end_date = date + datetime.timedelta(hours=1)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 9d0ff3f58bee5328e6b593d84ee2140e486183db
     file = open('report_time_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
     print (start_date, "~", end_date, "동안 입력된 명령어")
     print ("-" * 70)
