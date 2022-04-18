@@ -43,11 +43,21 @@ if __name__ == "__main__" :
             continue
 
         print ("계정 :", account)
+        file.write("계정 :", account)
+        file.write("\n")
         for h in history_list :
             print ("\t%s\t%s" %h)
+            file.write("\t {0} \t {1}".format(h[0], h[1]))
+            file.write("\n")
         print ("-" * 70)
+        file.write("-" * 70)
         print ("계정 :", account)
+        file.write("계정 :", account)
+        file.write("\n")
         for h in history_list :
             print ("\t%s\t%s" %h)
+            file.write("\t {0} \t {1}".format(h[0], h[1]))
+            file.write("\n")
         print ("-" * 70)
+        file.write("-" * 70)
     file.close()
