@@ -26,10 +26,17 @@ if __name__ == "__main__" :
     end_date = date + datetime.timedelta(hours=1)
 
     
+    file = open('report_time_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
     print (start_date, "~", end_date, "동안 입력된 명령어")
+    file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
+    file.write("-" * 70)
+    file.write("\n")
     print (start_date, "~", end_date, "동안 입력된 명령어")
+    file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
+    file.write("-" * 70)
+    file.write("\n")
 
     accounts = get_accounts()
     for account in accounts :
@@ -42,10 +49,21 @@ if __name__ == "__main__" :
             continue
 
         print ("계정 :", account)
+        file.write("계정 :", account)
+        file.write("\n")
         for h in history_list :
             print ("\t%s\t%s" %h)
+            file.write("\t {0} \t {1}".format(h[0], h[1]))
+            file.write("\n")
         print ("-" * 70)
+        file.write("-" * 70)
         print ("계정 :", account)
+        file.write("계정 :", account)
+        file.write("\n")
         for h in history_list :
             print ("\t%s\t%s" %h)
+            file.write("\t {0} \t {1}".format(h[0], h[1]))
+            file.write("\n")
         print ("-" * 70)
+        file.write("-" * 70)
+    file.close()
