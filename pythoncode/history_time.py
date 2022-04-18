@@ -31,10 +31,12 @@ if __name__ == "__main__" :
     file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
     file.write("-" * 70)
+    file.write("\n")
     print (start_date, "~", end_date, "동안 입력된 명령어")
     file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
     file.write("-" * 70)
+    file.write("\n")
 
     accounts = get_accounts()
     for account in accounts :
