@@ -46,10 +46,10 @@ def history(account):
 now = dt.datetime.now()
 
 if __name__ == '__main__':
-    accouts= get_accounts()
+    accounts= get_accounts()
     
     file = open('report_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
-    for account in accouts:        
+    for account in accounts:        
         print("계정 : ", account)
         file.write("계정 : {0}".format(account))
         
