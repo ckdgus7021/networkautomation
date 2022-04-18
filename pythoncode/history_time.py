@@ -28,11 +28,11 @@ if __name__ == "__main__" :
     
     file = open('report_time_' + now.strftime("%Y-%m-%d %H_%M_%S") + '.txt', "w")
     print (start_date, "~", end_date, "동안 입력된 명령어")
-    file.write("{} ~ {} 동안 입력된 명령어".format(start_date, end_date))
+    file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
     file.write("-" * 70)
     print (start_date, "~", end_date, "동안 입력된 명령어")
-    file.write("{} ~ {} 동안 입력된 명령어".format(start_date, end_date))
+    file.write("{} ~ {} 동안 입력된 명령어\n".format(start_date, end_date))
     print ("-" * 70)
     file.write("-" * 70)
 
