@@ -32,6 +32,6 @@ def get_accounts():
     return answer
 
 if __name__ == '__main__':
-    accouts= get_accounts()
-    for account in accouts:
+    accounts= get_accounts()
+    for account in accounts:
         print(account)
