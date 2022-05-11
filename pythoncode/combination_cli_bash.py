@@ -79,7 +79,7 @@ if __name__ == '__main__':
     term = input("몇 초 단위로 비교하시겠습니까? : ")
     count = input("몇 번 비교하시겠습니까? : ")
 
-    brief_dir = "/bootflash/tmp"
+    brief_dir = "/bootflash/scritps/tmp"
     if not os.path.isdir(brief_dir) :
         os.mkdir(brief_dir)
         
@@ -89,8 +89,8 @@ if __name__ == '__main__':
         end_time = start_time + datetime.timedelta(seconds = term)
         now = datetime.datetime.now()
 
-        brief_path1 = "/bootflash/tmp/brief.txt"
-        brief_path2 = "/bootflash/tmp/brief2.txt"        
+        brief_path1 = "/bootflash/scripts/tmp/brief.txt"
+        brief_path2 = "/bootflash/scripts/tmp/brief2.txt"        
 
         # 최초 인터페이스 정보를 brief.txt에 기록합니다.
         write_brief(brief_path1)
@@ -121,4 +121,4 @@ if __name__ == '__main__':
             
         cnt = cnt + 1
 
-    shutil.rmtree("/bootflash/tmp")
+    shutil.rmtree("/bootflash/scripts/tmp")
