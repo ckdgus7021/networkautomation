@@ -79,7 +79,7 @@ if __name__ == '__main__':
     term = input("몇 초 단위로 비교하시겠습니까? : ")
     count = input("몇 번 비교하시겠습니까? : ")
 
-    brief_dir = "/bootflash/scritps/tmp"
+    brief_dir = "/bootflash/scripts/tmp"
     if not os.path.isdir(brief_dir) :
         os.mkdir(brief_dir)
         
