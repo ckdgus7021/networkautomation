@@ -5,38 +5,40 @@ import time
 from kivy.app import App
 
 
-class Hello(App):
+class test(App):
+
     def build(self):
         # 메인 코드
         pygame.init()
-        monitor = pygame.display.set_mode((swidth, sheight))
+        
         pygame.display.set_caption('test')
-
-        ship = pygame.image.load('ship02.png')
-        shipSize = ship.get_rect().size
-
-        missile = pygame.image.load('missile.png')
 
         playGame()
 
-# 함수 선언
+
+
 def paintEntity(entity, x, y) :
     monitor.blit(entity, (x, y))
 
 def writeGameOver() :
-    myfont = pygame.font.Font('NanumGothic-Regular.ttf', 40)
+    myfont = pygame.font.Font('C:\img/NanumGothic-Regular.ttf', 40)
     txt = myfont.render(u'우주선 폭파!! 게임 끝!', True, (255-r, 255-g, 255-b))
     monitor.blit(txt, (swidth/2-180, sheight/2-50))
     pygame.display.update()
     time.sleep(5)
 
 def writeScore(score) :
-    myfont = pygame.font.Font('NanumGothic-Regular.ttf', 20)
+    myfont = pygame.font.Font('C:\img/NanumGothic-Regular.ttf', 20)
     txt = myfont.render(u'파괴한 우주괴물 수 : ' + str(score), True, (255-r, 255-g, 255-b))
     monitor.blit(txt, (10, sheight - 40))
 
 def playGame() :
     global monitor, r, g, b, ship, monster, monsterImage, missile
+
+    monitor = pygame.display.set_mode((swidth, sheight))
+    ship = pygame.image.load('C:\img/ship02.png')
+    shipSize = ship.get_rect().size
+    missile = pygame.image.load('C:\img/missile.png')
 
     r = random.randrange(0, 256)
     g = random.randrange(0, 256)
@@ -176,11 +178,13 @@ r, g, b = [0] * 3
 swidth, sheight = 500, 700
 monitor = None
 ship, shipSize = None, 0
-monsterImage = ['monster01.png', 'monster02.png', 'monster03.png', 'monster04.png', 'monster05.png', \
-    'monster06.png', 'monster07.png', 'monster08.png', 'monster09.png', 'monster10.png']
+monsterImage = ['C:\img/monster01.png', 'C:\img/monster02.png', 'C:\img/monster03.png', 'C:\img/monster04.png', 'C:\img/monster05.png', \
+    'C:\img/monster06.png', 'C:\img/monster07.png', 'C:\img/monster08.png', 'C:\img/monster09.png', 'C:\img/monster10.png']
 monster = None
 missile = None
-shipImage = ['ship01.png', 'ship02.png', 'ship03.png', 'ship04.png']
+shipImage = ['C:\img/ship01.png', 'C:\img/ship02.png', 'C:\img/ship03.png', 'C:\img/ship04.png']
 
 
+if __name__ == '__main__':
+    test().run()
 
